@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		window.onbeforeunload = function () {
+				return "Do you want to exit this page?";
+			};
+		var mouseX = 0;
+			var mouseY = 0;
+			var popupCounter = 0;
+
+			document.addEventListener("mousemove", function (e) {
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+				document.getElementById("coordinates").innerHTML = "<br />X: " + e.clientX + "px<br />Y: " + e.clientY + "px";
+				leave();
+			});
+
+			function leave() {
+				if (mouseY < 80) {
+						alert("Please don't close the tab!");
+					
+				}
+		}
+	</script>
+	<title>Sticky Page</title>
+</head>
+<body>
+	<div>
+		<span id="coordinates"></span>
+	</div>
+</body>
+</html>
